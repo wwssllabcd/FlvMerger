@@ -48,7 +48,7 @@
             this.lbInputFileName.ItemHeight = 12;
             this.lbInputFileName.Location = new System.Drawing.Point(12, 24);
             this.lbInputFileName.Name = "lbInputFileName";
-            this.lbInputFileName.Size = new System.Drawing.Size(656, 244);
+            this.lbInputFileName.Size = new System.Drawing.Size(881, 244);
             this.lbInputFileName.TabIndex = 1;
             this.lbInputFileName.DragDrop += new System.Windows.Forms.DragEventHandler(this.lbInputFileName_DragDrop);
             this.lbInputFileName.DragEnter += new System.Windows.Forms.DragEventHandler(this.lbInputFileName_DragEnter);
@@ -104,7 +104,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(680, 360);
+            this.ClientSize = new System.Drawing.Size(905, 360);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.lblStatus);
             this.Controls.Add(this.btnStart);

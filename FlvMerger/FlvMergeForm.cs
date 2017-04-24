@@ -34,7 +34,12 @@ namespace FlvMerger
         }
 
         private void string_to_listBox(string[] files, ListBox listbox) {
-            foreach (string file in files) {
+            this.lbInputFileName.Items.Clear();
+
+            IList <string> sortList = new List<string>(files);
+            sortList = sortList.OrderBy(q => q).ToList();
+
+            foreach (string file in sortList) {
                 this.lbInputFileName.Items.Add(file);
             }
         }
