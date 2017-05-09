@@ -45,7 +45,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EricCore\FlvMerge.cs" />
     <Compile Include="FlvMergeForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +77,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\EricCoreCS\EricCoreCS.csproj">
+      <Project>{bc4f6f25-292b-4b05-adf7-60185aee6282}</Project>
+      <Name>EricCoreCS</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

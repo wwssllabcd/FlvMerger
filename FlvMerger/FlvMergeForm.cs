@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using EricCore;
+
 
 namespace FlvMerger
 {
@@ -19,7 +21,9 @@ namespace FlvMerger
         private void btnStart_Click(object sender, EventArgs e) {
             lblStatus.Text = "Starting";
             string outputFileName = this.txtOutputFileName.Text;
-            EricCoreCSharp.FlvMerge flvMerger = new EricCoreCSharp.FlvMerge(outputFileName);
+
+            
+            FlvMerge flvMerger = new FlvMerge(outputFileName);
             foreach (string file in this.lbInputFileName.Items) {
                 flvMerger.merge(file);
             }
