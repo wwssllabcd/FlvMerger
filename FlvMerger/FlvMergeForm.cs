@@ -63,5 +63,26 @@ namespace FlvMerger
             this.lbInputFileName.Items.Clear();
             this.txtOutputFileName.Text = "";
         }
+
+        private void btnUpItem_Click(object sender, EventArgs e)
+        {
+            int sel = lbInputFileName.SelectedIndex;
+            if (sel == 0)
+            {
+                return;
+            }
+
+            //switch up/down
+            var selString = lbInputFileName.Items[sel];
+            var upString = lbInputFileName.Items[sel-1];
+
+            lbInputFileName.Items.Insert(sel + 1, selString);
+            lbInputFileName.Items.Insert(sel + 2, upString);
+
+            lbInputFileName.Items.RemoveAt(sel);
+            lbInputFileName.Items.RemoveAt(sel-1);
+
+            lbInputFileName.SelectedIndex = sel - 1;
+        }
     }
 }
