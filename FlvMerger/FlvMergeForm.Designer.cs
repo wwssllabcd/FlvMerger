@@ -33,6 +33,7 @@
             this.lblStatus = new System.Windows.Forms.Label();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnUpItem = new System.Windows.Forms.Button();
+            this.btnItemDown = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtOutputFileName
@@ -111,11 +112,22 @@
             this.btnUpItem.UseVisualStyleBackColor = true;
             this.btnUpItem.Click += new System.EventHandler(this.btnUpItem_Click);
             // 
+            // btnItemDown
+            // 
+            this.btnItemDown.Location = new System.Drawing.Point(697, 296);
+            this.btnItemDown.Name = "btnItemDown";
+            this.btnItemDown.Size = new System.Drawing.Size(59, 23);
+            this.btnItemDown.TabIndex = 8;
+            this.btnItemDown.Text = "Down";
+            this.btnItemDown.UseVisualStyleBackColor = true;
+            this.btnItemDown.Click += new System.EventHandler(this.btnItemDown_Click);
+            // 
             // FlvMergeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(905, 360);
+            this.Controls.Add(this.btnItemDown);
             this.Controls.Add(this.btnUpItem);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.lblStatus);
@@ -142,6 +154,7 @@
         private System.Windows.Forms.Label lblStatus;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnUpItem;
+        private System.Windows.Forms.Button btnItemDown;
     }
 }
 
