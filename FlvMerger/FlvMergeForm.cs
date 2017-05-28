@@ -74,75 +74,27 @@ namespace FlvMerger
             this.txtOutputFileName.Text = "";
         }
 
-        private void up_down_item(ListBox lb, int select, bool isUpItem)
-        {
-            var selString = lb.Items[select];
-            int selSwitch;
-            if (isUpItem)
-            {
-                selSwitch = select - 1;
-            }
-            else
-            {
-                selSwitch = select + 1;
-            }
-            var switchString = lbInputFileName.Items[selSwitch];
-
-            lb.Items.Insert(select + 1, selString);
-            lb.Items.Insert(select + 2, switchString);
-
-
-
-        }
         private void btnUpItem_Click(object sender, EventArgs e)
         {
-            //int sel = lbInputFileName.SelectedIndex;
-            //if (sel == 0)
-            //{
-            //    return;
-            //}
+            int sel = lbInputFileName.SelectedIndex;
+            if (sel == 0)
+            {
+                return;
+            }
+            WfUtility wfu = new WfUtility();
 
-            ////switch up/down
-            //int selSwitch = sel - 1;
-            //int insertPtr = sel + 1;
-
-            //var selString = lbInputFileName.Items[sel];
-            //var upString = lbInputFileName.Items[selSwitch];
-
-            //lbInputFileName.Items.Insert(insertPtr, selString);
-            //lbInputFileName.Items.Insert(insertPtr + 1, upString);
-
-            //lbInputFileName.Items.RemoveAt(sel);
-            //lbInputFileName.Items.RemoveAt(selSwitch);
-
-            //lbInputFileName.SelectedIndex = sel - 1;
+            wfu.up_down_item(lbInputFileName, sel, true);
         }
 
         private void btnItemDown_Click(object sender, EventArgs e)
         {
             int sel = lbInputFileName.SelectedIndex;
-            if ((sel+1) == lbInputFileName.Items.Count)
+            if ((sel + 1) == lbInputFileName.Items.Count)
             {
                 return;
             }
-            int selSwitch = sel + 1;
-            int insertPtr = sel + 2;
-
-
-            //switch up/down
-            var selString = lbInputFileName.Items[sel];
-            var switchString = lbInputFileName.Items[selSwitch];
-
-            lbInputFileName.Items.Insert(insertPtr, switchString);
-            lbInputFileName.Items.Insert(insertPtr+1, selString);
-
-
-
-            lbInputFileName.Items.RemoveAt(sel);
-            lbInputFileName.Items.RemoveAt(selSwitch);
-
-            lbInputFileName.SelectedIndex = sel + 1;
-
+            WfUtility wfu = new WfUtility();
+            wfu.up_down_item(lbInputFileName, sel, false);
         }
     }
 }
