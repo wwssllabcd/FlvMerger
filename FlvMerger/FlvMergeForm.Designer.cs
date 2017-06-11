@@ -34,6 +34,7 @@
             this.btnClear = new System.Windows.Forms.Button();
             this.btnUpItem = new System.Windows.Forms.Button();
             this.btnItemDown = new System.Windows.Forms.Button();
+            this.btnSortByDate = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtOutputFileName
@@ -122,11 +123,22 @@
             this.btnItemDown.UseVisualStyleBackColor = true;
             this.btnItemDown.Click += new System.EventHandler(this.btnItemDown_Click);
             // 
+            // btnSortByDate
+            // 
+            this.btnSortByDate.Location = new System.Drawing.Point(762, 296);
+            this.btnSortByDate.Name = "btnSortByDate";
+            this.btnSortByDate.Size = new System.Drawing.Size(75, 23);
+            this.btnSortByDate.TabIndex = 9;
+            this.btnSortByDate.Text = "SortByDate";
+            this.btnSortByDate.UseVisualStyleBackColor = true;
+            this.btnSortByDate.Click += new System.EventHandler(this.btnSortByDate_Click);
+            // 
             // FlvMergeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(905, 360);
+            this.Controls.Add(this.btnSortByDate);
             this.Controls.Add(this.btnItemDown);
             this.Controls.Add(this.btnUpItem);
             this.Controls.Add(this.btnClear);
@@ -155,6 +167,7 @@
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnUpItem;
         private System.Windows.Forms.Button btnItemDown;
+        private System.Windows.Forms.Button btnSortByDate;
     }
 }
 

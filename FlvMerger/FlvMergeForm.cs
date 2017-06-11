@@ -4,6 +4,7 @@ using System.Data;
 using System.Linq;
 using System.Windows.Forms;
 using EricCore;
+using System.IO;
 
 
 namespace FlvMerger
@@ -14,6 +15,7 @@ namespace FlvMerger
         {
             InitializeComponent();
         }
+
 
         private void btnStart_Click(object sender, EventArgs e)
         {
@@ -38,13 +40,9 @@ namespace FlvMerger
             }
         }
 
-        private void string_to_listBox(string[] files, ListBox listbox)
+        private void string_to_listBox(List<string> sortList, ListBox listbox)
         {
             this.lbInputFileName.Items.Clear();
-
-            IList<string> sortList = new List<string>(files);
-            sortList = sortList.OrderBy(q => q).ToList();
-
             foreach (string file in sortList)
             {
                 this.lbInputFileName.Items.Add(file);
@@ -61,7 +59,10 @@ namespace FlvMerger
         {
             string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
             this.txtOutputFileName.Text = replace_string_tail(files[0], ".", "_merge.flv");
-            string_to_listBox(files, this.lbInputFileName);
+
+            List<string> fileList = new List<string>(files);
+
+            string_to_listBox(fileList, this.lbInputFileName);
         }
 
         private void btnClear_Click(object sender, EventArgs e)
@@ -82,6 +83,7 @@ namespace FlvMerger
             wfu.up_down_item(lbInputFileName, sel, true);
         }
 
+   
         private void btnItemDown_Click(object sender, EventArgs e)
         {
             int sel = lbInputFileName.SelectedIndex;
@@ -91,6 +93,35 @@ namespace FlvMerger
             }
             WfUtility wfu = new WfUtility();
             wfu.up_down_item(lbInputFileName, sel, false);
+        }
+        class FileTime
+        {
+            public string name;
+            public DateTime time;
+        }
+        List<FileTime> fileTimeColls = new List<FlvMergeForm.FileTime>();
+
+        private void btnSortByDate_Click(object sender, EventArgs e)
+        {
+            fileTimeColls.Clear();
+            foreach (string name in lbInputFileName.Items)
+            {
+                FileTime f = new FileTime();
+                f.name = name;
+                f.time = File.GetLastWriteTime(name);
+                fileTimeColls.Add(f);
+            }
+            fileTimeColls.Sort((x, y) => {
+                return x.time.CompareTo(y.time);
+            });
+
+            List<string> fileName = new List<string>();
+            foreach (FileTime ft in fileTimeColls)
+            {
+                fileName.Add(ft.name);
+            }
+            
+            string_to_listBox(fileName, this.lbInputFileName);
         }
     }
 }
