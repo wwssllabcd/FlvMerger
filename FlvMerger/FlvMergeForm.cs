@@ -62,7 +62,8 @@ namespace FlvMerger
 
             List<string> fileList = new List<string>(files);
 
-            string_to_listBox(fileList, this.lbInputFileName);
+            string_to_listBox(sort_file_name_by_time(fileList), this.lbInputFileName);
+            lblStatus.Text = "";
         }
 
         private void btnClear_Click(object sender, EventArgs e)
@@ -101,10 +102,11 @@ namespace FlvMerger
         }
         List<FileTime> fileTimeColls = new List<FlvMergeForm.FileTime>();
 
-        private void btnSortByDate_Click(object sender, EventArgs e)
+        private List<string> sort_file_name_by_time(List<string> fileNameColls)
         {
+
             fileTimeColls.Clear();
-            foreach (string name in lbInputFileName.Items)
+            foreach (string name in fileNameColls)
             {
                 FileTime f = new FileTime();
                 f.name = name;
@@ -120,8 +122,17 @@ namespace FlvMerger
             {
                 fileName.Add(ft.name);
             }
-            
-            string_to_listBox(fileName, this.lbInputFileName);
+            return fileName;
+        }
+
+        private void btnSortByDate_Click(object sender, EventArgs e)
+        {
+            List<String> fileNames = new List<string>();
+            foreach (string name in lbInputFileName.Items)
+            {
+                fileNames.Add(name);
+            }
+            string_to_listBox(sort_file_name_by_time(fileNames), this.lbInputFileName);
         }
     }
 }
