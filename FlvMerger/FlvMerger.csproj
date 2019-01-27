@@ -33,6 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -81,9 +82,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\EricCoreCS\EricCoreCS.csproj">
-      <Project>{bc4f6f25-292b-4b05-adf7-60185aee6282}</Project>
-      <Name>EricCoreCS</Name>
+    <ProjectReference Include="..\..\EricCoreCS\EricCore.csproj">
+      <Project>{9574a542-e9fd-45cc-89b9-e3321c4e4f98}</Project>
+      <Name>EricCore</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
