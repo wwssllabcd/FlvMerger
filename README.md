@@ -11,7 +11,7 @@ FLV 檔案 = FLV表頭檔+ tag1 + tag內容1 + tag2 + tag內容2 + ...+... + tag
 
 download
 ---------
-https://github.com/wwssllabcd/FlvMerger/tree/master/FlvMerger/obj/Debug
+https://github.com/wwssllabcd/FlvMerger/blob/master/FlvMerger/obj/Debug/FlvMerger.exe
 
 
 FLV 表頭檔：（9位元組）
