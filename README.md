@@ -1,5 +1,5 @@
 # FlvMerger
-drag and drop to merge flv file
+drag and drop multi-file into dialog, and merge flv file
 
 
 透過拖拉的方式合併 flv 檔案(需相同編碼)
