@@ -1,12 +1,17 @@
 # FlvMerger
-drag and drop to merge *.flv
+drag and drop to merge flv file
 
 
 透過拖拉的方式合併 flv 檔案(需相同編碼)
 
+
 FLV 檔案構成
 ----------
 FLV 檔案 = FLV表頭檔+ tag1 + tag內容1 + tag2 + tag內容2 + ...+... + tagN+tag內容N
+
+download
+---------
+https://github.com/wwssllabcd/FlvMerger/tree/master/FlvMerger/obj/Debug
 
 
 FLV 表頭檔：（9位元組）
